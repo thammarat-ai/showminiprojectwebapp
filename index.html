@@ -54,7 +54,8 @@
 
         function normalizeVotes(rawVotes) {
             if (!rawVotes || typeof rawVotes !== 'object') {
-      g      }
+                return {};
+            }
 
             if (Array.isArray(rawVotes)) {
                 return rawVotes.reduce((acc, row) => {
@@ -92,7 +93,9 @@
 
         async function loadVotes() {
             try {
-                const response = await fetch(VOTE_API_URL);
+                const response = await fetch(`${VOTE_API_URL}?t=${Date.now()}`, {
+                    cache: 'no-store'
+                });
                 const data = await response.json();
                 votesByGroup = normalizeVotes(data);
             } catch (error) {
@@ -105,6 +108,48 @@
             return Number(votesByGroup[String(group)] || 0);
         }
 
+        function submitVoteByHiddenForm(groupId) {
+            return new Promise((resolve) => {
+                const frameName = `vote-frame-${Date.now()}-${groupId}`;
+                const iframe = document.createElement('iframe');
+                iframe.name = frameName;
+                iframe.style.display = 'none';
+
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = VOTE_API_URL;
+                form.target = frameName;
+                form.style.display = 'none';
+
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'group';
+                input.value = String(groupId);
+                form.appendChild(input);
+
+                document.body.appendChild(iframe);
+                document.body.appendChild(form);
+
+                const cleanup = () => {
+                    if (form.parentNode) form.parentNode.removeChild(form);
+                    if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+                };
+
+                const timeout = setTimeout(() => {
+                    cleanup();
+                    resolve();
+                }, 1500);
+
+                iframe.onload = () => {
+                    clearTimeout(timeout);
+                    cleanup();
+                    resolve();
+                };
+
+                form.submit();
+            });
+        }
+
         async function submitVote(groupId) {
             const normalizedGroupId = String(groupId);
 
@@ -113,6 +158,14 @@
             }
 
             pendingVotes.add(normalizedGroupId);
+            const voteCountBefore = getVoteCount(normalizedGroupId);
+
+            const markVoteSuccess = (nextVoteCount) => {
+                votesByGroup[normalizedGroupId] = nextVoteCount;
+                votedGroups.add(normalizedGroupId);
+                saveVotedGroups();
+                render(currentFilter);
+            };
 
             try {
                 const response = await fetch(VOTE_API_URL, {
@@ -123,29 +176,47 @@
                     body: new URLSearchParams({ group: normalizedGroupId }).toString()
                 });
 
+                const responseText = await response.text();
                 let result = null;
+
                 try {
-                    result = await response.json();
+                    result = JSON.parse(responseText);
                 } catch {
-                    result = null;
+                    throw new Error('Apps Script ไม่ได้ตอบกลับเป็น JSON');
                 }
 
-                if (result && result.success === false) {
-                    throw new Error('Vote rejected by API');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                if (!result || result.success !== true) {
+                    throw new Error(result?.message || 'Apps Script ไม่ยืนยันการบันทึกโหวต');
                 }
 
                 const returnedVotes = Number(result?.votes);
                 const nextVoteCount = Number.isFinite(returnedVotes)
                     ? returnedVotes
-                    : getVoteCount(normalizedGroupId) + 1;
+                    : voteCountBefore + 1;
 
-                votesByGroup[normalizedGroupId] = nextVoteCount;
-                votedGroups.add(normalizedGroupId);
-                saveVotedGroups();
-                render(currentFilter);
+                markVoteSuccess(nextVoteCount);
             } catch (error) {
-                console.error('Error submitting vote:', error);
-                alert('โหวตไม่สำเร็จ กรุณาลองใหม่อีกครั้ง');
+                console.warn('Fetch vote failed, trying form submit fallback:', error);
+
+                try {
+                    await submitVoteByHiddenForm(normalizedGroupId);
+                    await loadVotes();
+
+                    const refreshedVoteCount = getVoteCount(normalizedGroupId);
+                    if (refreshedVoteCount > voteCountBefore) {
+                        markVoteSuccess(refreshedVoteCount);
+                        return;
+                    }
+
+                    throw new Error('คะแนนในชีตยังไม่เปลี่ยนหลังส่งโหวต');
+                } catch (fallbackError) {
+                    console.error('Error submitting vote:', fallbackError);
+                    alert('โหวตไม่สำเร็จ: กรุณาตรวจสอบการ Deploy Apps Script (Anyone) และลองใหม่');
+                }
             } finally {
                 pendingVotes.delete(normalizedGroupId);
             }
