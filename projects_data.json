@@ -1,0 +1,290 @@
+[
+  {
+    "group": 1,
+    "url": "https://vocabulary-flashcard-bht35nzfm-nattapoom-pengnets-projects.vercel.app/",
+    "video_url": "https://www.youtube.com/watch?v=bhBAL1NjxPY",
+    "demo_code": "test1@gmail.com pass:123456 (user) test0@gmail.com pass:123456 (Admin)",
+    "members": "67020915 ณัฐภูมิ เป็งเนตร์\n67026012 ไชยวัฒน์ แซว้าง\n67024896 อริญชัย ปิ่นทอง",
+    "topic": "7. แอปเก็บรวบรวมคำศัพท์",
+    "github": "https://github.com/Arinchai11/-Vocabulary-Flashcards-?classId=5fcd90e2-7337-48e9-a685-b218022f7fef&assignmentId=31504e1c-e1de-4275-af31-2200e7369d49&submissionId=8b19608b-6b39-d5eb-93bf-8ca5c2ffac4a"
+  },
+  {
+    "group": 2,
+    "url": "https://task-split02.vercel.app/",
+    "video_url": "https://www.youtube.com/watch?v=lixvlWDMetE",
+    "demo_code": "admin\nwongsarat7006@gmail.com\n123456\n\nemployee\nexame@gmail.com\n111111",
+    "members": "67021253 นายวีรกร วงศ์ษารัฐ\n67020847 นายชิษณุพงศ์ วงค์สูน\n67020746 นายกฤตเมธ ป้องตัน",
+    "topic": "3. ระบบจัดการงานที่ต้องทำ (Task Board)",
+    "github": "https://github.com/wongsarat7006-lang/TaskSplit02?classId=5fcd90e2-7337-48e9-a685-b218022f7fef&assignmentId=31504e1c-e1de-4275-af31-2200e7369d49&submissionId=8d247d4e-af9a-cf8f-ae0d-675c0be415d9"
+  },
+  {
+    "group": 3,
+    "url": "https://mini-project-eg74.vercel.app/",
+    "video_url": "https://youtu.be/eT88Yu8r1nE",
+    "demo_code": "คนที่ 1 hr/123456\nคนที่ 2 john.dev/123456",
+    "members": "67026168 นายอติชาติ ผาแสนเถิน (หัวหน้าทีม, นักพัฒนา, นักนำเสนอ, นักทดลอง)\n67026001 ชยากร เตชะพัฒนาวงศ์ (นักพัฒนา, นักทดลอง, นักออกแบบ)\n67024795 นายธีรวิทย์ ทาบาง (นักพัฒนา, นักทดลอง)",
+    "topic": "9. เว็บประกาศรับสมัครงานภายใน",
+    "github": "https://github.com/Felsau/MiniProject?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=8d1754ee-572c-db13-0353-2365a5281535"
+  },
+  {
+    "group": 4,
+    "url": "https://bookverse-ten-theta.vercel.app/login",
+    "video_url": "https://www.youtube.com/watch?v=K_virJAnfn8",
+    "demo_code": "Username: admin\nPassword: 1234",
+    "members": "67021040 ธัญญลักษณ์ ดวงแสง\n67021073 นันทรัตน์ ติละ",
+    "topic": "1. ระบบจัดการคลังหนังสือส่วนตัว",
+    "github": "https://github.com/67021040Thanyalak/BOOKVERSE."
+  },
+  {
+    "group": 5,
+    "url": "https://test2-sandy-sigma.vercel.app/",
+    "video_url": "https://youtu.be/DKhuuSkele0?si=Rpy8t-UxduPNEBE9&t=89",
+    "demo_code": "Username(อีเมล) : TestForTest@gmail.com\nPassword : 123",
+    "members": "67020870 ญาณาธร ภาชนะ (ออกแบบ, นักพัฒนา, นำเสนอ)\n67026179 อธิวัฒน์ บวรกิจ (Backend programming, นักพัฒนา, นำเสนอ)",
+    "topic": "5. ระบบคลังสูตรอาหาร",
+    "github": "https://github.com/Atiwat-Bowornkit/web-app-project-69"
+  },
+  {
+    "group": 6,
+    "url": "https://cs-webapp.vercel.app/",
+    "video_url": "https://youtu.be/xOrw_gSDvVs?si=57_8oOOgxacJb6Bg",
+    "demo_code": "-",
+    "members": "67021220 วริศรา วังเทียน\n67021017 ธนวรรณ สมแก้ว",
+    "topic": "2. แอปจดบันทึกรายรับ-รายจ่าย",
+    "github": "https://github.com/Tanawan28/CS-webapp"
+  },
+  {
+    "group": 7,
+    "url": "https://miniprojectnextjs101.vercel.app/",
+    "video_url": "https://youtu.be/dl02vFsV8QU?si=qM9QSz9ON-1XzeQq",
+    "demo_code": "-",
+    "members": "67021332 นายอดิศักดิ์ เกาะสังข์ (หัวหน้ากลุ่ม)\n67027024 นนทกร สิงห์ทอน (Fullstack)\n67024807 นนท์ปวิธ กิจอรุณกูล (Support)",
+    "topic": "8. ระบบจัดการสต็อกสินค้าขนาดเล็ก",
+    "github": "https://github.com/Adisakx2548/miniprojectnextjs101?classId=5fcd90e2-7337-48e9-a685-b218022f7fef&assignmentId=31504e1c-e1de-4275-af31-2200e7369d49&submissionId=9b2e66cf-a7c0-12ae-7e14-a72064700be3"
+  },
+  {
+    "group": 8,
+    "url": "https://linktree-rust-ten.vercel.app/",
+    "video_url": "https://www.youtube.com/watch?v=n4tpkExS5aE",
+    "demo_code": "demo01\npassword:12345",
+    "members": "67020971 ทักษ์ดนัย พรมปัญญา นักพัฒนา, นักนำเสนอ\n67021174 ภูมิภัทร โพทา หัวหน้าทีม",
+    "topic": "4. เว็บรวมลิงก์โปรไฟล์ (Linktree Clone)",
+    "github": "https://github.com/67020971/linktree"
+  },
+  {
+    "group": 9,
+    "url": "https://miniprojectv2-alpha.vercel.app/",
+    "video_url": "https://youtu.be/rpDvWq2gv3E?si=JiPtZxPuJlB17OS6",
+    "demo_code": "test@gmail.com\n123456",
+    "members": "67021141 นาย ภัสพงษ์ สิริชัยวงศ์สกุล (ทุกตำแหน่งงาน)",
+    "topic": "6. ระบบจองโต๊ะร้านอาหาร",
+    "github": "https://github.com/XNXXTENTION/MiniProject-2"
+  },
+  {
+    "group": 10,
+    "url": "https://mood-move-bbhd1b1rg-pornthira-seedamats-projects.vercel.app",
+    "video_url": "https://youtu.be/FqgvMKiwe8k?si=U3pWbAnvRVz7Wa12",
+    "demo_code": "User - wiraya123p@gmail.com\nPassword - 1234",
+    "members": "67021062 นลินทิพย์ เป็กธนู\n67021129 พรธีรา สีดามาตร\n67021264 วีรยา เกี๋ยงคำ",
+    "topic": "10. ระบบบันทึกการออกกำลังกาย",
+    "github": "https://github.com/Pornthira-Seedamat/MoodMove?classId=5fcd90e2-7337-48e9-a685-b218022f7fef&assignmentId=31504e1c-e1de-4275-af31-2200e7369d49&submissionId=50aff4fd-4098-5a46-1a97-0257cebce682"
+  },
+  {
+    "group": 11,
+    "url": "https://task-project-board.vercel.app/login",
+    "video_url": "https://youtu.be/fRgNs2nOP78?si=Gjrpi8SHt9cFrNQV",
+    "demo_code": "Email : test1234@gmail.com\nPassword : 12345678",
+    "members": "67021130 ภัทรพล รัชนิกรเพ็ญ (Backend Developer)\n67021309 สลิลทิพย์ ดอกนางแย้ม (Frontend Developer)\n670262113 ละอองดาว ทาลาว (System Analyst , Database Designer)",
+    "topic": "3. ระบบจัดการงานที่ต้องทำ (Task Board)",
+    "github": "https://github.com/laoongdao-dev/task-project-board.git"
+  },
+  {
+    "group": 12,
+    "url": "https://nextjs-app-production-4ead.up.railway.app/",
+    "video_url": "https://youtu.be/icYPZFFI5AM?si=M0zaQKKTvMn2OBmI",
+    "demo_code": "Username: test101\nPassword: test0110\n(หรืออาจารย์จะสร้าง account เล่นเองเลยก็ได้ค่ะ)",
+    "members": "67021196 รุ่งระวี แก้วงาม (ตำแหน่ง Manager, ออกแบบ, พัฒนา (ส่วนใหญ่ backend, นำเสนอ))\n67021219 วชิรวิทย์ ศรีทอง ((General เบ้, ส่วนใหญ่จัดการ front end เกือบทุกหน้า, นำเสนอ)",
+    "topic": "1. ระบบจัดการคลังหนังสือส่วนตัว",
+    "github": "https://github.com/lowkeyraining/MyLibrary?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=9669bd68-812d-62a5-b283-117d08c75db8"
+  },
+  {
+    "group": 13,
+    "url": "https://punnawit67025404.github.io/income-expense-tracker/",
+    "video_url": "https://youtu.be/iBkeSp14v3Q",
+    "demo_code": "User : Somsri\nPW : 123456",
+    "members": "67025987 จิตตินี สุดตา (หัวหน้าทีม, สื่อนำเสนอ)\n67024818 ปาริชาติ ขัติยศ (Dev, UXU)\n67025404 ปัญณวิชญ์ อินทปาน (Dev, นำเสนอ)",
+    "topic": "2. แอปจดบันทึกรายรับ-รายจ่าย",
+    "github": "https://github.com/Punnawit67025404/income-expense-tracker.git?classId=5fcd90e2-7337-48e9-a685-b218022f7fef&assignmentId=31504e1c-e1de-4275-af31-2200e7369d49&submissionId=61b8d69f-95ca-b37d-eb68-41bdf04bc36d"
+  },
+  {
+    "group": 14,
+    "url": "https://restaurant-booking-deka.onrender.com/",
+    "video_url": "https://www.youtube.com/watch?v=gCuu1J0AWk0",
+    "demo_code": "admin1\n1234",
+    "members": "67020993 นายธนภัทร แสนคำยวง\n67021354 นายอภิเชษฐ์ เอี่ยมหน่อ\n67026146 นางสาวสุวิชาดา วงพีระ",
+    "topic": "6. ระบบจองโต๊ะร้านอาหาร",
+    "github": "https://github.com/THANAVIN-67/restaurant-booking.git"
+  },
+  {
+    "group": 15,
+    "url": "https://stockment-bice.vercel.app/",
+    "video_url": "https://youtu.be/T8o3nSKSSvM",
+    "demo_code": "-",
+    "members": "67021286 นาย ศิรพัฒช์ อำขำ (นักพัฒนา)\n67020960 นาย ถิรวัฒน์ วงค์ทอง (นักพัฒนา)\n67024773 นาย ธนูเดช คำอุปละ (นักพัฒนา)",
+    "topic": "8. ระบบจัดการสต็อกสินค้าขนาดเล็ก",
+    "github": "https://github.com/Siraphat-C/Miniproject-StockManagement?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=d221450e-bb55-caa9-962c-738e71c54df3"
+  },
+  {
+    "group": 16,
+    "url": "https://my-linktree-kfnw.vercel.app",
+    "video_url": "https://www.youtube.com/watch?v=BUTCW8fp3pA",
+    "demo_code": "user10@gmail.com/user10\n(***หรือสามารถสมัครเองได้เลย***)",
+    "members": "67024874 ศักดิ์พล อิ่นอ้าย (นักออกแบบส่วนติดต่อผู้ใช้, นักนำเสนอ)\n67026180 อภิสิทธิ์ เทพซาว (นักออกแบบระบบ, นักนำเสนอ)\n67026045 ณัฐปคัลภ์ พจนารถ (นักทดสอบระบบ, นักนำเสนอ)",
+    "topic": "4. เว็บรวมลิงก์โปรไฟล์ (Linktree Clone)",
+    "github": "https://github.com/woomn/My_Linktree?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=0e6a9567-56d6-1fa2-7331-7c9fbd52fa09"
+  },
+  {
+    "group": 17,
+    "url": "https://miniproject-yxve.vercel.app",
+    "video_url": "https://www.youtube.com/watch?v=G69jHI3yeaE",
+    "demo_code": "User : Teacher\nTeacher@gmail.com\nPassword: 123456789",
+    "members": "67021095 ปาริชาต จันจม\n67024728 ขวัญชีวา คำแดง\n67024863 รัตน์ติญาภรณ์ แหลมจัด",
+    "topic": "7. แอปเก็บรวบรวมคำศัพท์",
+    "github": "https://github.com/67024728/Miniproject?classId=5fcd90e2-7337-48e9-a685-b218022f7fef&assignmentId=31504e1c-e1de-4275-af31-2200e7369d49&submissionId=2040ba1f-a59a-8c7c-a278-d113a7bcfaff"
+  },
+  {
+    "group": 18,
+    "url": "https://fitness-copy.vercel.app/login",
+    "video_url": "https://youtu.be/-KunX8Ietmw",
+    "demo_code": "Username : Test@test.com\nPassword : test1234",
+    "members": "67026023 ฐากร ใจพล (Backend ,Database)\n67020892 ณัฏฐกิตติ์ ปะติเก (Fontend ,Database)\n67024751 ดนุเดช นายกุม (UX/UI ,คนนำเสนอ)",
+    "topic": "10. ระบบบันทึกการออกกำลังกาย",
+    "github": "https://github.com/NutthakitPatike/Project-Fitness-app?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=a2bac6af-036c-6828-887d-3c1465c219c3"
+  },
+  {
+    "group": 19,
+    "url": "https://jobrecruitment-gules.vercel.app/",
+    "video_url": "https://www.youtube.com/watch?v=-yYf8JnnG58",
+    "demo_code": "user\nadmin:admin@gmail.com password admin1234\nemployee:employee1@company.com\npassword emp1234",
+    "members": "67026089 นายพฤทธิพร เถื่อนคุ้ม\n67021343 อนวัช เคนวงศ์ษา\n67021163 นายภูมินทร์ อุ่นคำ",
+    "topic": "9. เว็บประกาศรับสมัครงานภายใน",
+    "github": "https://github.com/anawatowen1-alt/jobrecruitment?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=b4f02ce0-3249-ccee-fddc-632c405193ac"
+  },
+  {
+    "group": 20,
+    "url": "https://khangsaeb.vercel.app/",
+    "video_url": "https://youtu.be/W-KB_FHrNHQ",
+    "demo_code": "Role User\nusername: test@gmail.com\npassword: 12345\n\nRole Admin\nusername: admin@gmail.com\npassword: admin123",
+    "members": "67024830 พีรดา สมเต็ม\n67024841 ภูมิพัฒน์ อสุณี\n67026056 ณัฐพล อ่อนสี",
+    "topic": "5. ระบบคลังสูตรอาหาร",
+    "github": "https://github.com/Nattaponao/Recipe-Management-System?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=a6b0e2a5-3a60-84fa-6a8e-a0cf3bee50ad"
+  },
+  {
+    "group": 21,
+    "url": "https://miniproject-nine-pi.vercel.app/",
+    "video_url": "https://youtu.be/euApKmtWe6c",
+    "demo_code": "Username : test\npassword : 123",
+    "members": "67021321 สิริรัฐ โตทุ้ย (Back-End)\n67024784 ธีรวัฒน์ เกียรติก่อสิน (UI Designer)\n67024852 รัชชานนท์ รัตนสุวรรณ (Front-End)",
+    "topic": "2. แอปจดบันทึกรายรับ-รายจ่าย",
+    "github": "https://github.com/ChidevX404/miniproject?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=0f657a14-dd1f-8c5b-b7a6-9e019bf0ba3f"
+  },
+  {
+    "group": 22,
+    "url": "https://vocabulary-flashcards-five.vercel.app/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNDM3NjI2MzE2OTczNzg4AAEeQe-4BPKErXoXGFYA9F9QIlYJ6t39PzzPVqRGU1EP2o_ZTMoLWL967OG3EGs_aem_VmMBBxnDnDIyY61BSza55A",
+    "video_url": "https://youtu.be/uRm-vpAddAY?si=tdlIpRH-AUnc1_Jc",
+    "demo_code": "test2@gmail.com\nPassword:123456\n\nสำรอง\ntest1@gmail.com\nPassword:123456",
+    "members": "67021242 วัชรพล ประกอบไวทยกิจ\n(นักพัฒนา)\n\n67025976 คชภัค เสนาน้อย\n(หัวหน้าทีม,นักนำสนอ)\n\n67026090 ภัทรพงษ์ วิลาไล\n(นักพัฒนา)",
+    "topic": "7. แอปเก็บรวบรวมคำศัพท์",
+    "github": "https://github.com/TZeropw/Vocabulary-Flashcards?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNDM3NjI2MzE2OTczNzg4AAEe_1kQQ8eiLOqtla9omx4R2kRBbwAXPmSGbGfkExJ7sHHm9LeEGJEFcaLWmRc_aem_BbA49dPZ2HTVp8DcH6_iCQ"
+  },
+  {
+    "group": 23,
+    "url": "https://storynest-livid.vercel.app",
+    "video_url": "https://youtu.be/hUJ-a3vR0XM?si=1q4lckOf0ig6h6XQ",
+    "demo_code": "username : app@gmail.com\npassword : 456789",
+    "members": "67020724 นางสาวกมลชนก คำนาค (พัฒนา)\n67020959 นายติณณภพ คำหลวง (นำเสนอ)\n67024829 นายพณิชพล สุวรรณหล้า (นำเสนอ)",
+    "topic": "1. ระบบจัดการคลังหนังสือส่วนตัว",
+    "github": "https://github.com/67020724-glitch/miniproject?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=7d6f3574-ec69-fb7c-3feb-cbce8137c844"
+  },
+  {
+    "group": 24,
+    "url": "https://web-sc-linkhub-o1g7.vercel.app/",
+    "video_url": "https://youtu.be/pC0AQ9txgFg?si=pTmK713RMRhNTfzf",
+    "demo_code": "Email : test2@gmail.com\nPassword : poppy123",
+    "members": "67020814 ชยันตํ ธิใจ\n67021275 วีรวัฒน์ บุตตะโยธี\n67021185 รณพัฒน์ พรมถา",
+    "topic": "4. เว็บรวมลิงก์โปรไฟล์ (Linktree Clone)",
+    "github": "https://github.com/Wirawat444/web-sc-linkhub"
+  },
+  {
+    "group": 25,
+    "url": "https://stockmight.vercel.app/",
+    "video_url": "https://youtu.be/owKRCX38QKw",
+    "demo_code": "Username สำหรับอาจารย์:\n\nชื่อผู้ใช้ :\n\n1) \" Admin-Thammarat \"\n2) \" Manager-Thammarat \"\n3) \" Staff-Thammarat \"\n\nรหัสผ่าน : \" 123 \" ของทุก Username\n\nหากพบปัญหาโปรดติดต่อ: 67020780@up.ac.th (จิรกิตต์)",
+    "members": "67026067 นายทรงวุฒิ โพธิ์ศรี\n67025954 นายกิตติณัฏฐ์ ครรชิตานุรักษ์\n67020780 นายจิรกิตต์ หมูหล้า",
+    "topic": "8. ระบบจัดการสต็อกสินค้าขนาดเล็ก",
+    "github": "https://github.com/TehSomgwut/StockMight?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=ad252c1a-4791-2bd5-269b-2315aec45301"
+  },
+  {
+    "group": 26,
+    "url": "https://savory-bistro-puce.vercel.app/",
+    "video_url": "https://youtu.be/tLvSuJLS_5U?si=DSuNk8sUP7Ltifkg",
+    "demo_code": "admin panel\nlink: https://savory-bistro-puce.vercel.app/admin/\n\nemail: thammarat@gmail.com\npassword: 123456",
+    "members": "67020982 ธนกร แก้วใหม่\n67024717 กิตติพัฒน์ ยศวงค์\n67024740 ชนสรณ์ เผ่าชวด",
+    "topic": "6. ระบบจองโต๊ะร้านอาหาร",
+    "github": "https://github.com/tanakorn911/table-reserve?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=52333cdb-ca22-c3a3-bd93-b52ecd60ff3b"
+  },
+  {
+    "group": 27,
+    "url": "https://finalminiproject01.vercel.app/",
+    "video_url": "https://youtu.be/T_KE0OiJRqw",
+    "demo_code": "https://youtu.be/T_KE0OiJRqw",
+    "members": "67021006 ธนภัทร เอี่ยมสอาด\n67024739 เจษฎา จูอาภรณ์\n67021310 สิรภัทร วิเวกหัสกัณฑ์",
+    "topic": "3. ระบบจัดการงานที่ต้องทำ (Task Board)",
+    "github": "https://github.com/Thanapat2103/miniprojectnext101?classId=afc967e0-48a6-428e-99f1-e3b9269e9d5a&assignmentId=3c5664d4-ab74-444c-be8d-221f85c86b5a&submissionId=7d1573c8-4c90-3636-3c3f-18dac17c99c6"
+  },
+  {
+    "group": 28,
+    "url": "https://figma-internal-job-board.vercel.app/",
+    "video_url": "https://youtu.be/B67LPEX6YTY",
+    "demo_code": "Chaweewan\nPassword:1234",
+    "members": "67026124  นางสาววริศรา ปัญญาแก้ว นำเสนอ\n67092318  นาวสาวชญานิษฐ์ นิยะบุตร นักพัฒนา",
+    "topic": "9. เว็บประกาศรับสมัครงานภายใน",
+    "github": "https://github.com/ChayanidFern/Figma-Internal-Job-Board"
+  },
+  {
+    "group": 29,
+    "url": "https://natdanaisingngam.github.io/Pintonew/",
+    "video_url": "https://youtu.be/x6CbqnqrYQc",
+    "demo_code": "-",
+    "members": "67020904 นายณัฐดนัย สิงห์งาม​(หัวหน้าทีม,พัฒนาFrontend-backendจากPrototype,นำเสนอ,จัดทำUi)\n\n67021028 นายธนวัฒน์ แสนว่าง ​(สมาชิก,Inputข้อมูลตัวอย่าง,จัดทำUi,ทำสไลด์นำเสนอ,พัฒนาprototypeจากUi)\n​\n67020803 นายชญาณัตถพล คงเจริญ​(สมาชิก,จัดทำUi,ทำสไลด์นำเสนอ,พัฒนาprototypeจากUi)",
+    "topic": "5. ระบบคลังสูตรอาหาร",
+    "github": "https://github.com/NatdanaiSingngam/Pintonew"
+  },
+  {
+    "group": 30,
+    "url": "https://my-app-omega-virid.vercel.app/",
+    "video_url": "https://youtu.be/JwjtilaMVhk?si=BOeE0xDphYnc6Rb1",
+    "demo_code": "-",
+    "members": "67020768 นายกฤษฎา ศรีคงแก้ว\n67024885 นายศุภณัฐ วัชรเสวี",
+    "topic": "8. ระบบจัดการสต็อกสินค้าขนาดเล็ก",
+    "github": "-"
+  },
+  {
+    "group": 31,
+    "url": "https://smoothlist.vercel.app/login",
+    "video_url": "https://www.youtube.com/watch?v=PqUhxDjy7R8",
+    "demo_code": "user:RawrMeatt Pass:123456",
+    "members": "67020858 ไชยพร เล็กเจริญ\n67024762 ธนพัฒน์ สีทา",
+    "topic": "3. ระบบจัดการงานที่ต้องทำ (Task Board)",
+    "github": "https://github.com/RawrMeatt/smoothlist"
+  },
+  {
+    "group": 32,
+    "url": "https://fintrack-nextjs-ten.vercel.app/login",
+    "video_url": "https://youtu.be/dMqPlnsx49g",
+    "demo_code": "U: admin\nP: admin1234",
+    "members": "67020948 ตะวัน ประสมการ\n67020881 ณภัทรชัย ไชยโสภา\n67021297 สรัญ โทปุรินทร์",
+    "topic": "2. แอปจดบันทึกรายรับ-รายจ่าย",
+    "github": "https://github.com/67020948Tawan/fintrack-nextjs"
+  }
+]

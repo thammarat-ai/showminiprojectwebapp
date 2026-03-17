@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project Showcase | Web App Dev 2-68</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Kanit', sans-serif; background-color: #f8fafc; }
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-20">
+
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-lg text-white">
+                    <i class="fas fa-laptop-code text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold text-slate-800">Web App Dev Mini Project Showcase 2/68</h1>
+            </div>
+            <div class="relative w-full md:w-96">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="ค้นหาชื่อนิสิต, กลุ่ม หรือหัวข้อ..." 
+                       class="w-full pl-10 pr-4 py-2 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-500 text-sm">
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+        <div id="stats-area" class="mb-10 text-slate-500 text-sm font-medium"></div>
+        <div id="dashboard-content" class="space-y-16">
+            </div>
+    </main>
+
+    <script>
+        const VOTE_API_URL = 'https://script.google.com/macros/s/AKfycbx-3obMCmJsnEoKrtPzia6R-IEAHfyD654H08Eojjbb766MDqVQxPDk-AFCsl3Oc6tw/exec';
+        const VOTED_GROUPS_KEY = 'mini-project-voted-groups';
+
+        let projectData = [];
+        let votesByGroup = {};
+        let currentFilter = '';
+
+        const pendingVotes = new Set();
+        const votedGroups = new Set(JSON.parse(localStorage.getItem(VOTED_GROUPS_KEY) || '[]').map(String));
+
+        function saveVotedGroups() {
+            localStorage.setItem(VOTED_GROUPS_KEY, JSON.stringify([...votedGroups]));
+        }
+
+        function normalizeVotes(rawVotes) {
+            if (!rawVotes || typeof rawVotes !== 'object') {
+      g      }
+
+            if (Array.isArray(rawVotes)) {
+                return rawVotes.reduce((acc, row) => {
+                    const group = String(row.group ?? row[0] ?? '');
+                    const votes = Number(row.votes ?? row[1] ?? 0);
+                    if (group) {
+                        acc[group] = Number.isFinite(votes) ? votes : 0;
+                    }
+                    return acc;
+                }, {});
+            }
+
+            return Object.entries(rawVotes).reduce((acc, [group, votes]) => {
+                const voteCount = Number(votes);
+                acc[String(group)] = Number.isFinite(voteCount) ? voteCount : 0;
+                return acc;
+            }, {});
+        }
+
+        async function loadProjectData() {
+            try {
+                const response = await fetch('projects_data.json');
+                const data = await response.json();
+
+                projectData = data.map(project => ({
+                    ...project,
+                    members: project.members.replace(/\n/g, '<br>'),
+                    demo_code: project.demo_code.replace(/\n/g, '<br>')
+                }));
+            } catch (error) {
+                console.error('Error loading project data:', error);
+                projectData = [];
+            }
+        }
+
+        async function loadVotes() {
+            try {
+                const response = await fetch(VOTE_API_URL);
+                const data = await response.json();
+                votesByGroup = normalizeVotes(data);
+            } catch (error) {
+                console.error('Error loading vote data:', error);
+                votesByGroup = {};
+            }
+        }
+
+        function getVoteCount(group) {
+            return Number(votesByGroup[String(group)] || 0);
+        }
+
+        async function submitVote(groupId) {
+            const normalizedGroupId = String(groupId);
+
+            if (votedGroups.has(normalizedGroupId) || pendingVotes.has(normalizedGroupId)) {
+                return;
+            }
+
+            pendingVotes.add(normalizedGroupId);
+
+            try {
+                const response = await fetch(VOTE_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: new URLSearchParams({ group: normalizedGroupId }).toString()
+                });
+
+                let result = null;
+                try {
+                    result = await response.json();
+                } catch {
+                    result = null;
+                }
+
+                if (result && result.success === false) {
+                    throw new Error('Vote rejected by API');
+                }
+
+                const returnedVotes = Number(result?.votes);
+                const nextVoteCount = Number.isFinite(returnedVotes)
+                    ? returnedVotes
+                    : getVoteCount(normalizedGroupId) + 1;
+
+                votesByGroup[normalizedGroupId] = nextVoteCount;
+                votedGroups.add(normalizedGroupId);
+                saveVotedGroups();
+                render(currentFilter);
+            } catch (error) {
+                console.error('Error submitting vote:', error);
+                alert('โหวตไม่สำเร็จ กรุณาลองใหม่อีกครั้ง');
+            } finally {
+                pendingVotes.delete(normalizedGroupId);
+            }
+        }
+
+        async function initialize() {
+            await Promise.all([loadProjectData(), loadVotes()]);
+            render();
+        }
+
+        function createProjectCard(project) {
+            const previewUrl = `https://s0.wp.com/mshots/v1/${encodeURIComponent(project.url)}?w=800`;
+            const hasVoted = votedGroups.has(String(project.group));
+            const voteCount = getVoteCount(project.group);
+            
+            return `
+                <div class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200 flex flex-col shadow-sm">
+                    <div class="relative group h-48 bg-slate-100 overflow-hidden">
+                        <img src="${previewUrl}" class="w-full h-full object-cover" alt="Web Preview">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+                            <a href="${project.url}" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">เข้าชมเว็บ</a>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase">Group ${project.group}</div>
+                    </div>
+
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-blue-600 text-[10px] font-bold tracking-widest uppercase mb-1">${project.topic}</h4>
+                        <div class="text-xs text-slate-500 line-clamp-2 mb-4 h-8">${project.members}</div>
+                        
+                        <div class="bg-slate-50 border border-slate-100 rounded-xl p-3 mb-5">
+                            <span class="text-[9px] font-bold text-slate-400 uppercase block mb-1">Demo Access</span>
+                            <div class="text-[11px] text-slate-700 font-mono leading-tight">${project.demo_code}</div>
+                        </div>
+
+                        <div class="mt-auto grid grid-cols-2 gap-3">
+                            <a href="${project.url}" target="_blank" class="flex items-center justify-center bg-blue-600 text-white py-2.5 rounded-xl text-xs font-semibold hover:shadow-lg hover:shadow-blue-200 transition">
+                                <i class="fas fa-external-link-alt mr-2"></i> เว็บไซต์
+                            </a>
+                            <a href="${project.video_url}" target="_blank" class="flex items-center justify-center bg-red-50 text-red-600 border border-red-100 py-2.5 rounded-xl text-xs font-semibold hover:bg-red-100 transition">
+                                <i class="fab fa-youtube mr-2"></i> คลิปรีวิว
+                            </a>
+                            <a href="${project.github}" target="_blank" class="col-span-2 flex items-center justify-center bg-slate-100 text-slate-600 py-2 rounded-xl text-[10px] hover:bg-slate-200 transition">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <button
+                                type="button"
+                                data-vote-group="${project.group}"
+                                ${hasVoted ? 'disabled' : ''}
+                                class="col-span-2 flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition ${hasVoted ? 'bg-emerald-50 text-emerald-700 border border-emerald-100 cursor-not-allowed' : 'bg-amber-50 text-amber-700 border border-amber-100 hover:bg-amber-100'}"
+                            >
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-heart"></i>
+                                    ${hasVoted ? 'โหวตแล้ว' : 'โหวตโปรเจกต์นี้'}
+                                </span>
+                                <span class="font-bold">${voteCount} โหวต</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function render(filter = "") {
+            currentFilter = filter;
+            const container = document.getElementById('dashboard-content');
+            const stats = document.getElementById('stats-area');
+            
+            const filtered = projectData.filter(p => 
+                p.members.toLowerCase().includes(filter.toLowerCase()) ||
+                p.topic.toLowerCase().includes(filter.toLowerCase()) ||
+                p.group.toString().includes(filter)
+            );
+
+            stats.innerText = `พบทั้งหมด ${filtered.length} จาก ${projectData.length} กลุ่ม`;
+
+            const grouped = filtered.reduce((acc, p) => {
+                if (!acc[p.topic]) acc[p.topic] = [];
+                acc[p.topic].push(p);
+                return acc;
+            }, {});
+
+            const sortedTopics = Object.keys(grouped).sort((a, b) => {
+                const aNum = parseInt(a, 10);
+                const bNum = parseInt(b, 10);
+
+                if (!Number.isNaN(aNum) && !Number.isNaN(bNum)) {
+                    return aNum - bNum;
+                }
+
+                return a.localeCompare(b, 'th');
+            });
+
+            container.innerHTML = sortedTopics.map(topic => `
+                <section>
+                    <div class="flex items-center gap-4 mb-8">
+                        <h2 class="text-xl font-bold text-slate-800">${topic}</h2>
+                        <div class="h-px bg-slate-200 flex-grow"></div>
+                        <span class="text-xs bg-slate-200 text-slate-600 px-2.5 py-1 rounded-full font-bold">${grouped[topic].length}</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        ${grouped[topic].map(p => createProjectCard(p)).join('')}
+                    </div>
+                </section>
+            `).join('');
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => render(e.target.value));
+        document.getElementById('dashboard-content').addEventListener('click', (event) => {
+            const voteButton = event.target.closest('button[data-vote-group]');
+            if (!voteButton) return;
+            submitVote(voteButton.dataset.voteGroup);
+        });
+
+        initialize();
+    </script>
+</body>
+</html>
